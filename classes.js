@@ -102,9 +102,10 @@ class ProgressiveManager extends Manager{
   constructor(firstName, lastName, email, age, reports, employee,index){
     super(firstName, lastName, email, age, reports, employee,index);
     this.title = 'Not a manager';
-    this.bonus = 0;
-    
-    this.fire = function(){
+    this.bonus = 0;}
+  
+    fire(index){
+      super.fire(index);
      this.bonus += 100;
      for (let i = 1; i <= this.reports.length; i++)
      if (this.reports.length+1 >= 1 && this.reports.length+1 <= 3){
@@ -124,7 +125,8 @@ class ProgressiveManager extends Manager{
     }
 
 
-    this.hire= function(){
+    hire(employee){
+      super.hire(employee);
       for (let i = 0; i <= this.reports.length; i++)
       if (this.reports.length+1 >= 1 && this.reports.length+1 <= 3){
         this.title = 'Barely Manager';
@@ -144,7 +146,7 @@ class ProgressiveManager extends Manager{
     }
   }
 
-}
+
 
 
 
